@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS `Teams`;
 CREATE TABLE `Teams` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
+  `fundation_year` INT,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -30,7 +31,7 @@ DROP TABLE IF EXISTS `Players`;
 CREATE TABLE `Players` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `age` INT NOT NULL,
+  `age` INT,
   `team_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (team_id) REFERENCES Teams(id)
