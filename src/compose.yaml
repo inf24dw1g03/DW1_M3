@@ -1,17 +1,15 @@
 services:
   api:
     build:
-      context: .
-      dockerfile: basketball-tournament/Dockerfile
+      context: .  # O contexto de build é o diretório atual
+      dockerfile: basketball-tournament/Dockerfile  # Caminho relativo para o Dockerfile da API
     container_name: basketball-api
-    command: sh -c "yarn install && yarn run dev"  
     ports:
-      - "3000:3000"  
-    working_dir: /app  
+      - "3000:3000"
     volumes:
-      - ./:/app  
+      - ./basketball-tournament:/home/node/app
     environment:
-      DATABASE_HOST: mysql  
+      DATABASE_HOST: mysql
       DATABASE_USER: root
       DATABASE_PASSWORD: 12345678
       DATABASE_NAME: basketball
@@ -19,19 +17,20 @@ services:
       - db
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
-      interval: 30s  
+      interval: 30s
       retries: 5 
-      timeout: 20s   
+      timeout: 20s
 
   db:
     build:
       context: .
-    container_name: Basketball_db
+      dockerfile: Dockerfile
+    container_name: basketball-db
     environment:
-      MYSQL_ROOT_PASSWORD: 12345678 
-      MYSQL_DATABASE: basketball  
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: basketball
     volumes:
-      - Basketball-mysql-data:/var/lib/mysql  
+      - basketball-mysql-data:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 20s
@@ -40,13 +39,12 @@ services:
   react-admin:
     build:
       context: .
-      dockerfile: ra01-create-react-app/Dockerfile  
+      dockerfile: ra01-create-react-app/Dockerfile 
     container_name: react-admin
     ports:
-      - "3006:3006" 
+      - "3006:3006"
     depends_on:
       - api
 
 volumes:
-  Basketball-mysql-data:  
-
+  basketball-mysql-data:
