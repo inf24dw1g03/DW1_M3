@@ -1,8 +1,8 @@
 services:
   api:
     build:
-      context: .  # O contexto de build é o diretório atual
-      dockerfile: basketball-tournament/Dockerfile  # Caminho relativo para o Dockerfile da API
+      context: .
+      dockerfile: basketball-tournament/Dockerfile 
     container_name: basketball-api
     ports:
       - "3000:3000"

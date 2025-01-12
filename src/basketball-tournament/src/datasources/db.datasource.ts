@@ -5,7 +5,7 @@ const config = {
   name: 'db',
   connector: 'mysql',
   url: '',
-  host: 'localhost',
+  host: 'basketball-db',
   port: 3306,
   user: 'root',
   password: '12345678',
