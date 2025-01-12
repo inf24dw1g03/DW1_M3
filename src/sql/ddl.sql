@@ -4,7 +4,7 @@ USE basketball;
 --
 -- Table structure for table `teams`
 --
-DROP TABLE IF EXISTS `teams`;
+DROP TABLE IF EXISTS `team`;
 CREATE TABLE `team` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE `team` (
 --
 -- Table structure for table `tournaments`
 --
-DROP TABLE IF EXISTS `tournaments`;
+DROP TABLE IF EXISTS `tournament`;
 CREATE TABLE `tournament` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
