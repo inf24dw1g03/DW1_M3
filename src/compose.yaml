@@ -14,7 +14,8 @@ services:
       DATABASE_PASSWORD: 12345678
       DATABASE_NAME: basketball
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
       interval: 30s
@@ -44,7 +45,8 @@ services:
     ports:
       - "3006:3006"
     depends_on:
-      - api
+      api:
+        condition: service_healthy
 
 volumes:
   basketball-mysql-data:
