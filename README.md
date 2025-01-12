@@ -13,14 +13,10 @@ Recursos da API:
 
 ## Organização do Repositório
 
-
 * Código fonte na [pasta src](src/).
 * Capítulos do relatório na [pasta doc](doc/).
-* Documento inicial [OpenApi](src/api/openapi.yaml)
-
 
 ## Tecnologias
-
 
 * [Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript)
 * [nodeJS](https://nodejs.org/en/)
@@ -32,6 +28,7 @@ Recursos da API:
 * Docker
 * NodeJS
 * Loopback4
+* ReactJs
 
 ## Relatório
 
