@@ -16,7 +16,7 @@ INSERT INTO `tournament` VALUES (1,'Championship A','2024-01-01','2024-02-01'),(
 -- Dumping data for table `player`
 --
 
-INSERT INTO `player` VALUES (1,'John Doe',25,1),(2,'Mike Smith',28,2),(3,'Chris Brown',30,3),(4,'David Lee',23,4),(5,'Tom Harris',27,5),(6,'Luke Wilson',24,6),(7,'Sam Carter',22,7),(8,'Ben Evans',26,8),(9,'Jake Turner',29,1),(10,'Ethan Davis',21,2),(11,'Ryan Young',31,3),(12,'Alex White',32,4),(13,'Nick Lewis',20,5),(14,'Matt Walker',25,6),(15,'Josh Scott',23,7);
+INSERT INTO `player` VALUES (1,'John Doe',25,1),(2,'Mike Smith',28,2),(3,'Chris Brown',30,3),(4,'David Lee',23,4),(5,'Tom Harris',27,5),(6,'Luke Wilson',24,6),(7,'Sam Carter',22,7),(8,'Ben Evans',26,8),(9,'Jake Turner',29,1),(10,'Ethan Davis',21,2),(11,'Ryan Young',31,3),(12,'Alex White',32,4),(13,'Nick Lewis',20,5),(14,'Matt Walker',25,6),(15,'Josh Scott',23,7),(16, 'Daniel Green', 24, 8),(17, 'Steve Adams', 27, 9),(18, 'Harry Collins', 26, 10),(19, 'Oliver Martin', 23, 11),(20, 'Liam Baker', 29, 12),(21, 'Nathan Hill', 21, 13),(22, 'Adam Reed', 22, 14),(23, 'Dylan Wright', 28, 15),(24, 'Noah Allen', 30, 1),(25, 'Logan Scott', 32, 2),(26, 'Oscar Murphy', 31, 3),(27, 'Jack Campbell', 20, 4),(28, 'Evan Bell', 25, 5),(29, 'James Foster', 23, 6),(30, 'Mason Carter', 22, 7);
 
 --
 -- Dumping data for table `match`

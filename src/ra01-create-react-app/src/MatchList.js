@@ -1,7 +1,17 @@
-import { Datagrid, List, Edit, SimpleForm, TextInput, ReferenceInput, NumberField, ReferenceField, TextField, EditButton } from 'react-admin';
+import { Datagrid, List, Edit, SimpleForm, TextInput, ReferenceInput, NumberField, ReferenceField, TextField, EditButton, SearchInput, SelectInput } from 'react-admin';
+
+const choices = [
+    { id: 'id' , name: 'Id'}
+];
+
+const matchFilters = [
+    <SearchInput source="q" placeholder="Search by id..."  alwaysOn />,
+    <TextInput label="Title" source="title"/>,
+    <SelectInput source="category" choices={choices} />,
+];
 
 export const MatchList = () => (
-    <List>
+    <List filters={matchFilters}>
         <Datagrid>
             <NumberField source="id" />
             <TextField source="date" />
