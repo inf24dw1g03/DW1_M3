@@ -1,27 +1,16 @@
 services:
   api:
     build:
-      context: .
-      dockerfile: basketball-tournament/Dockerfile 
+      context: ./basketball-tournament
+      dockerfile: Dockerfile 
     container_name: basketball-api
     ports:
-      - "3000:3000"
+      - "8000:8000"
     volumes:
       - ./basketball-tournament:/home/node/app
-    environment:
-      DATABASE_HOST: mysql
-      DATABASE_USER: root
-      DATABASE_PASSWORD: 12345678
-      DATABASE_NAME: basketball
     depends_on:
       db:
         condition: service_healthy
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
-      interval: 30s
-      retries: 5 
-      timeout: 20s
-
   db:
     build:
       context: .
@@ -32,6 +21,8 @@ services:
       MYSQL_DATABASE: basketball
     volumes:
       - basketball-mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 20s
@@ -39,14 +30,13 @@ services:
 
   react-admin:
     build:
-      context: .
-      dockerfile: ra01-create-react-app/Dockerfile 
+      context: ./ra01-create-react-app
+      dockerfile: Dockerfile 
     container_name: react-admin
     ports:
-      - "3006:3006"
+      - "3000:3000"
     depends_on:
-      api:
-        condition: service_healthy
+      - api
 
 volumes:
   basketball-mysql-data:

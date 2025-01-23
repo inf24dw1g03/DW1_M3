@@ -10,7 +10,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 
 
-const dataProvider = lb4Provider("http://127.0.0.1:3000");
+const dataProvider = lb4Provider("http://127.0.0.1:8000");
 const App = () => (
 
  <Admin dashboard={Dashboard} dataProvider={dataProvider}>

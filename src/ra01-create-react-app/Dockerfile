@@ -2,14 +2,14 @@ FROM node:18-slim
 
 WORKDIR /home/node/app
 
-COPY ./ra01-create-react-app/package*.json ./
+COPY ./package*.json ./
 
 RUN npm install
 
-COPY ./ra01-create-react-app/ ./
+COPY . .
 
 RUN npm run build
 
-EXPOSE 3006
+EXPOSE 3000
 
 CMD ["npm", "start"]
