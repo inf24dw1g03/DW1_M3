@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS basketball;
 USE basketball;
 
 --
--- Table structure for table `teams`
+-- Table structure for table `team`
 --
 DROP TABLE IF EXISTS `Team`;
 CREATE TABLE `Team` (
@@ -13,7 +13,7 @@ CREATE TABLE `Team` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Table structure for table `tournaments`
+-- Table structure for table `tournament`
 --
 DROP TABLE IF EXISTS `Tournament`;
 CREATE TABLE `Tournament` (
@@ -25,7 +25,7 @@ CREATE TABLE `Tournament` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Table structure for table `players`
+-- Table structure for table `player`
 --
 DROP TABLE IF EXISTS `Player`;
 CREATE TABLE `Player` (
@@ -38,7 +38,7 @@ CREATE TABLE `Player` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Table structure for table `matches`
+-- Table structure for table `match`
 --
 DROP TABLE IF EXISTS `Match`;
 CREATE TABLE `Match` (

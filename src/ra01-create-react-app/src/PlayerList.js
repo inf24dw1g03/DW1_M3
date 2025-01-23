@@ -1,7 +1,19 @@
-import { Datagrid, List, Edit, SimpleForm, TextInput, ReferenceInput, NumberField, ReferenceField, TextField, EditButton, NumberInput } from 'react-admin';
+import { Datagrid, List, Edit, SimpleForm, TextInput, ReferenceInput, NumberField, ReferenceField, TextField, EditButton, NumberInput, SearchInput, SelectInput } from 'react-admin';
+
+const choices = [
+    { id: 'name', name: 'Name'},
+    { id: 'id' , name: 'Id'}
+];
+
+const playerFilters = [
+    <SearchInput source="q" placeholder="Search by name or id..." alwaysOn key="search" />,
+    <TextInput label="Title" source="title"/>,
+    <SelectInput source="category" choices={choices} />,
+];
+
 
 export const PlayerList = () => (
-    <List>
+    <List filters={playerFilters}>
         <Datagrid>
             <NumberField source="id" />
             <TextField source="name" />
@@ -11,6 +23,7 @@ export const PlayerList = () => (
         </Datagrid>
     </List>
 );
+
 export const PlayerEdit = () => (
     <Edit>
         <SimpleForm>
