@@ -22,6 +22,7 @@ Recursos da API:
 * [nodeJS](https://nodejs.org/en/)
 * [MySQL](https://www.mysql.com)
 * [OpenAPI](https://swagger.io/specification/)
+* [OAuth2.0](https://developers.google.com/identity/protocols/oauth2?hl=pt-br)
 
 ### Frameworks e Bibliotecas
 
